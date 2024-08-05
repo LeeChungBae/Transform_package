@@ -5,7 +5,7 @@ import os
 import pandas as pd
 
 # 행 추출
-def col_drop(load_dt, path)
+def col_drop(load_dt, path):
     df = pd.read_parquet(f"{path}/load_dt={load_dt}")
     # drop columns -> implement
     cols = ['rnum','rankOldAndNew','movieCd']
@@ -13,7 +13,7 @@ def col_drop(load_dt, path)
     return df
 
 # 문자열 > 숫자
-def str_to_num(df, path)
+def str_to_num(df, path):
     # columns to sum
     num_cols = ['rank',                     # 순위
                 'salesAmt', 'salesAcc',     # 일일 & 누적 매출액
