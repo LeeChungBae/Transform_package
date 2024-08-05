@@ -14,7 +14,7 @@ def col_drop(load_dt, path):
     return df
 
 # 문자열 > 숫자
-def str_to_num(df, path):
+def str_to_num(df, path, load_dt):
     print("df at flag:", df.head(5))
     num_cols = ['rank',                     # 순위
                 'salesAmt', 'salesAcc',     # 일일 & 누적 매출액
@@ -25,11 +25,12 @@ def str_to_num(df, path):
      ]
 
     for col in num_cols:
-        print("col:", col)
+#        print("col:", col)
         df[col] = pd.to_numeric(df[col])
         
-    print("path:", path)
-    print("df at flag2:", df.head(5))
-    
+#    print("path:", path)
+#    print("df at flag2:", df.head(5))
+ 
+    df['load_dt'] = load_dt   
     df.to_parquet(path, partition_cols=['load_dt'])
     return df
