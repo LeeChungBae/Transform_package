@@ -10,14 +10,11 @@ def col_drop(load_dt, path):
 
     # drop columns -> implement
     cols = ['rnum','rankOldAndNew','movieCd'] 
-    df = df.drop(columns = cols, axis = 1)
-    
     print(type(df))
-
-    df = pd.DataFrame(df)
-    print(type(df))
+    new_df = df.drop(columns = cols, axis = 1)
+    print(type(new_df))
  
-    return df
+    return new_df
 
 # 문자열 > 숫자
 def str_to_num(df, path):
