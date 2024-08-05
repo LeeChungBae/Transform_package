@@ -23,9 +23,13 @@ def str_to_num(df, path):
                 'scrnCnt', 'showCnt',       # 일일 & 누적 상영수
                 'audiInten', 'audiChange',  # 관객수 변화 절대값 & 비율
      ]
-    for col in num_cols:
-        df[col] = pd.to_numeric(df[col])
 
-    df.to_parquet(path, partition_cols=['load_dt'])
+    for col in num_cols:
+        print("col:", col)
+        df[col] = pd.to_numeric(df[col])
+        
+    print("path:", path)
     print("df at flag2:", df.head(5))
+    
+    df.to_parquet(path, partition_cols=['load_dt'])
     return df
