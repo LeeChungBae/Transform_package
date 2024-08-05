@@ -28,5 +28,5 @@ def str_to_num(df, path):
         df[col] = pd.to_numeric(df[col])
 
     df.to_parquet(path, partition_cols=['load_dt'])
-    print("df at flag2:", df.head(5)))
+    print("df at flag2:", df.head(5))
     return df
