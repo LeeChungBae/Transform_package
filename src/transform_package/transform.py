@@ -10,10 +10,7 @@ def col_drop(load_dt, path):
 
     # drop columns -> implement
     cols = ['rnum','rankOldAndNew','movieCd'] 
-    print("Type of df before drop:", type(df))  # Check type
     df = df.drop(columns = cols, axis = 1)
-    print("Type of df after drop:", type(df))
- 
     return df
 
 # 문자열 > 숫자
