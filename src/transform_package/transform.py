@@ -9,11 +9,13 @@ def col_drop(load_dt, path):
     df = pd.read_parquet(f"{path}/load_dt={load_dt}")
     print('flag1')
     print(type(df))
+
     # drop columns -> implement
-    cols = ['rnum','rankOldAndNew','movieCd']
+    cols = ['rnum','rankOldAndNew','movieCd'] 
+    df = df.drop(axis=1,columns=cols)   
+
     print('flag2')
     print(type(df))
-    df = df.drop(axis=1,columns=cols)   
     return df
 
 # 문자열 > 숫자
