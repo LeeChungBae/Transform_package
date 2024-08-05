@@ -23,7 +23,7 @@ def str_to_num(df, path):
                 'audiInten', 'audiChange',  # 관객수 변화 절대값 & 비율
      ]
     for col in num_cols:
-        print(df[col], type(df[col])
+        print(df[col], type(df[col]))
         df[col] = pd.to_numeric(df[col])
 
     df.to_parquet(path, partition_cols=['load_dt'])
