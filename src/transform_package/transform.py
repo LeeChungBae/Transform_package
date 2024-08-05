@@ -5,7 +5,7 @@ import os
 import pandas as pd
 
 # 행 추출
-def col_drop(load_dt='20120101', path)
+def col_drop(load_dt, path)
     df = pd.read_parquet(f"{path}/load_dt={load_dt}")
     # drop columns -> implement
     cols = ['rnum','rankOldAndNew','movieCd']
